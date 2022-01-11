@@ -9,7 +9,7 @@ Pick it up and keep it
 -1
 -1
 0
-After you go back home, you remember the USB looking stick in your pocket and decide to plug it into your school computer. Unfortunately, it was a vape stick :(. The toxic fumes of the stick cause your school computer to overload and ultimately stop working. Your parents are mad and refuse to help you pay back the school, so you have to dig into your weekly allowance to pay the school back. 
+After you go back home, you remember the USB looking stick in your pocket and decide to plug it into your school computer. Unfortunately, it was a vape stick :(. The toxic fumes of the stick cause your school computer to overload and ultimately stop working. Your parents are mad and refuse to help you pay back the school, so you have to dig into your weekly allowance to pay the school back.
 Inspect it
 0
 -1
@@ -72,7 +72,7 @@ Ask out your cousin’s crush
 -1
 -2
 0
-Your cousin’s crush also happens to be a drug dealer, and  your cousin’s crush sells you some drugs. 
+Your cousin’s crush also happens to be a drug dealer, and  your cousin’s crush sells you some drugs.
 Ask out the most attractive person at school
 0
 0
@@ -130,7 +130,7 @@ Help the kid
 -2
 1
 0
-A lady at the supermarket thinks you look sus and calls the cops on you. You are forced to pay bail to get out of jail after you were wrongly arrested. 
+A lady at the supermarket thinks you look sus and calls the cops on you. You are forced to pay bail to get out of jail after you were wrongly arrested.
 Ignore the kid
 0
 -1
@@ -189,7 +189,7 @@ You apply to a culinary school to learn how to be a chef
 0
 You take a cooking test and your food makes the judges throw up. You are immediately sent home and cry yourself to sleep.
  It is winter break! What do you do?
-Go last minute Christmas shopping 
+Go last minute Christmas shopping
 -1
 1
 0
@@ -231,7 +231,7 @@ Cry
 0
 He takes pity on you and offers you money instead.
 For the next semester you want to get rid of advanced pre algebra because it is too advanced for you. What class do you want to take instead?
-AP Chinese 
+AP Chinese
 0
 0
 1
@@ -241,12 +241,12 @@ AP Calculus BC
 -2
 0
 You realize that just because the simple stuff is too hard doesn’t mean that the hard stuff is hard. You fail the class :(
-AP Accounting 
+AP Accounting
 2
 0
 0
 You take AP Accounting, and become cracked at money. You can now invest and manage your finances very well.
-AP Marketing 
+AP Marketing
 1
 -1
 0
@@ -336,11 +336,11 @@ N/A
 0
 N/A
 You decide that you need a new hobby. What do you do?
-Join a choir 
+Join a choir
 0
 0
 1
-It turns out that you joined a Chinese choir! 
+It turns out that you joined a Chinese choir!
 Extreme Ironing
 1
 1
@@ -361,7 +361,7 @@ Intro to competitive ironing
 1
 1
 0
-You become a pro at competitive ironing, winning several ironing competitions and making some cash. You are hopeful that you will have a career in extreme ironing 
+You become a pro at competitive ironing, winning several ironing competitions and making some cash. You are hopeful that you will have a career in extreme ironing
 The Intelligent Investor
 -1
 -1
@@ -383,7 +383,7 @@ Skip and play games instead
 -1
 0
 Your mom is mad and takes some of your money because she was looking forward to her only child’s graduation
-Attend 
+Attend
 1
 1
 0
@@ -418,5 +418,4 @@ Tell her to invite whoever
 0
 0
 -1
-Your mom takes the opportunity to invite all of her friends and make your graduation into her own party. The joke’s on her—when she tries to brag about your accomplishments, she realizes that you don’t have any and looks bad in front of her friends. 
-
+Your mom takes the opportunity to invite all of her friends and make your graduation into her own party. The joke’s on her—when she tries to brag about your accomplishments, she realizes that you don’t have any and looks bad in front of her friends.

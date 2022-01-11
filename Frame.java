@@ -9,7 +9,7 @@ public class Frame {
 	private String sStartingText; //This variable holds the text that greets the user in the starting screen
 	private String[] Situations = new String[20]; //This array holds the text for each situation
 	private String[][] Options = new String[4][20]; //This array holds the options for each situation. The first dimension represents the option number and the second represents the week number
-	private int[][][] OptionScores = new int[3][4][20]; //This array holds the score changes for each decision. The first dimension represents the type of score (money, moral, or social), the second dimension represents the option number, and the third represents the week number. 
+	private int[][][] OptionScores = new int[3][4][20]; //This array holds the score changes for each decision. The first dimension represents the type of score (money, moral, or social), the second dimension represents the option number, and the third represents the week number.
 	private String[][] Outcomes = new String[4][20]; //This array holds the outcomes for each decision. The first dimension represents the option number and the second represents the week number.
 	private JFrame frame = new JFrame("Cool Guy at The Highschool"); //Create a JFrame with the name of our game
 	private JPanel panel = new JPanel(new GridBagLayout()); //Create a JPanel with a GridBagLayout
@@ -21,12 +21,12 @@ public class Frame {
 	private JButton Option4 = new JButton();
 	private GridBagConstraints Constraints = new GridBagConstraints(); //Create a GridBagConstraint object that will be used to set the constraints for every object in the layout before adding it
 	private Font Font40 = new Font("Times New Roman", Font.PLAIN, 40); //Create a new font that most of the buttons can use
-	
+
     public Frame() throws IOException { //This is the default constructor that creates the window and triggers other classes
     	ReadFiles(); //Read all the file to populate the arrays
-    	
+
     	frame.add(panel); //add the panel to the frame
-    	
+
     	//set the constraints for the starting text to fill up available space vertically and horizontally with vertical padding
 	    Constraints.fill = GridBagConstraints.BOTH;
 	    Constraints.gridx = 0;
@@ -34,19 +34,19 @@ public class Frame {
 	    Constraints.gridwidth = 1;
 	    Constraints.ipady = 150;
 	    Constraints.weightx = 0.5;
-	    
+
 	    JTextArea StartingTextLabel = new JTextArea(sStartingText); //create a new JTextArea for the starting text. We do not use a JLabel because JLabels do not automatically support text wrapping
 	    StartingTextLabel.setBackground(Color.yellow); //Make the JTextArea yellow
-	    
+
 	    //Set the TextArea font to the font predefined, set it to wrap at each line, turn off the ability to edit it, and have no preferred size
 	    StartingTextLabel.setFont(Font40);
 	    StartingTextLabel.setLineWrap(true);
 	    StartingTextLabel.setWrapStyleWord(true);
 	    StartingTextLabel.setEditable(false);
 	    StartingTextLabel.setPreferredSize(null);
-	    
+
 	    panel.add(StartingTextLabel, Constraints); //add the TextArea to the panel with set constraints
-	    
+
 	    Constraints.gridy = 1; //Change the constraint to be one line down
 	    Constraints.ipady = 20; //Decrease the padding to 20
 	    Constraints.weighty = 0.5;
@@ -54,11 +54,11 @@ public class Frame {
 	    //set the frame size and make it so that the user cannot resize the window
 	    frame.setSize(FrameSize);
 	    frame.setResizable(false);
-	    
+
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //when the window is closed, quit the program
 	    AskQuestion();
   }
-    
+
     public void ReadFiles() throws IOException{
     	File file = new File("Scenarios.txt");
         Scanner reader = new Scanner(file);
@@ -76,7 +76,7 @@ public class Frame {
         	}
         }
     }
-    
+
     public void AskQuestion() {
     	JButton StartButton = new JButton("Start Playing"); //Create a start button
     	StartButton.setFont(new Font("Times New Roman", Font.PLAIN, 20)); //set the button font
@@ -86,7 +86,7 @@ public class Frame {
     		@Override
     		public void actionPerformed(ActionEvent e) { //When the button is clicked . . .
        			panel.removeAll(); //remove the label and button from the panel
-       			
+
        			//reset the constraints to fill horizontally starting in the top left cell
     			Constraints.gridx=0;
     			Constraints.gridy=0;
@@ -96,11 +96,11 @@ public class Frame {
     			Constraints.weightx = 0.1;
     			Constraints.weighty = 0;
     			Constraints.fill = GridBagConstraints.HORIZONTAL;
-    			
+
     			//define the size of 1/2 the screen
     			Dimension dimHalfs = new Dimension(frame.getBounds().width/2, 100);
     			Constraints.insets = new Insets(2,2,2,2);
-    			
+
     		    JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
     		    WeekLabel.setFont(Font40); //set the label's font
     		    WeekLabel.setLineWrap(true); //set the line wrap
@@ -110,13 +110,13 @@ public class Frame {
     		    WeekLabel.setPreferredSize(dimHalfs);
     		    WeekLabel.setMinimumSize(dimHalfs);
     		    WeekLabel.setMaximumSize(dimHalfs);
-    		    
+
     		    WeekLabel.invalidate(); //mark this label as not up to date
     		    panel.add(WeekLabel, Constraints); //add the label to the panel
-    		    
+
     			Constraints.gridx=1; //set the constraints to put the next element in the second column
     			JTextArea MoneyMoral = new JTextArea("Money Points: " + iMoney + "\nMoral Points: " + iMoral); //set the label text to state the money and moral points
-    			
+
     			//set the label's font and wrap as before. Set the size to take up half the screen.
     			MoneyMoral.setFont(Font40);
     			MoneyMoral.setLineWrap(true);
@@ -125,10 +125,10 @@ public class Frame {
     			MoneyMoral.setPreferredSize(dimHalfs);
     			MoneyMoral.setMinimumSize(dimHalfs);
     			MoneyMoral.setMaximumSize(dimHalfs);
-    			
+
     			MoneyMoral.invalidate(); //mark the label as not up to date and add it to the panel
     		    panel.add(MoneyMoral, Constraints);
-    		    
+
     		    //create a text area with the situation on the next line and set it up to take up the whole line
     			Constraints.gridx=0;
     			Constraints.gridy=1;
@@ -146,7 +146,7 @@ public class Frame {
     			Situation.setPreferredSize(null);
     			Situation.invalidate(); //mark the text area as not updated
     		    panel.add(Situation, Constraints); //add it to the panel
-    		    
+
     		    Constraints.gridy=2;
     			Constraints.gridwidth=1;
     			Constraints.ipady=0;
@@ -159,7 +159,7 @@ public class Frame {
     			Option1.setMaximumSize(dimHalfs);
     			Option1.invalidate();
     		    panel.add(Option1, Constraints);
-    		    
+
     		    Constraints.gridx=1;
     			Option2 = new JButton(Options[1][iWeek - 1]);
     			Option2.setFont(Font40);
@@ -168,7 +168,7 @@ public class Frame {
     			Option2.setMaximumSize(dimHalfs);
     			Option2.invalidate();
     		    panel.add(Option2, Constraints);
-    		    
+
     		    Constraints.gridx=0;
     		    Constraints.gridy=3;
     			Option3 = new JButton(Options[2][iWeek - 1]);
@@ -178,7 +178,7 @@ public class Frame {
     			Option3.setMaximumSize(dimHalfs);
     			Option3.invalidate();
     		    panel.add(Option3, Constraints);
-    		    
+
     		    Constraints.gridx=1;
     			Option4 = new JButton(Options[3][iWeek - 1]);
     			Option4.setFont(Font40);
@@ -187,14 +187,14 @@ public class Frame {
     			Option4.setMaximumSize(dimHalfs);
     			Option4.invalidate();
     		    panel.add(Option4, Constraints);
-    		    
+
     		    panel.revalidate();
     			panel.repaint();
     			ButtonClicks();
     		}
     		 });
     }
-    
+
     public void ButtonClicks() {
     	Option1.addActionListener(new ActionListener() {
 
@@ -205,9 +205,9 @@ public class Frame {
 				iSocialCredit += OptionScores[2][0][iWeek-1];
 				DisplayOutcome(Outcomes[0][iWeek-1]);
 			}
-    		
+
     	});
-    	
+
     	Option2.addActionListener(new ActionListener() {
 
 			@Override
@@ -217,9 +217,9 @@ public class Frame {
 				iSocialCredit += OptionScores[2][1][iWeek-1];
 				DisplayOutcome(Outcomes[1][iWeek-1]);
 			}
-    		
+
     	});
-    	
+
     	Option3.addActionListener(new ActionListener() {
 
 			@Override
@@ -229,9 +229,9 @@ public class Frame {
 				iSocialCredit += OptionScores[2][2][iWeek-1];
 				DisplayOutcome(Outcomes[2][iWeek-1]);
 			}
-    		
+
     	});
-    	
+
     	Option4.addActionListener(new ActionListener() {
 
 			@Override
@@ -241,10 +241,10 @@ public class Frame {
 				iSocialCredit += OptionScores[2][3][iWeek-1];
 				DisplayOutcome(Outcomes[3][iWeek-1]);
 			}
-    		
+
     	});
     }
-    
+
     public void DisplayOutcome(String sOutcome) {
     	panel.removeAll();
     	Constraints.fill = GridBagConstraints.BOTH;
