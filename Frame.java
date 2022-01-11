@@ -85,125 +85,131 @@ public class Frame {
     	StartButton.addActionListener(new ActionListener(){ //Add an action listener to the button that waits for it to be clicked
     		@Override
     		public void actionPerformed(ActionEvent e) { //When the button is clicked . . .
-       			panel.removeAll(); //remove the label and button from the panel
-       			
-       			//reset the constraints to fill horizontally starting in the top left cell
-    			Constraints.gridx=0;
-    			Constraints.gridy=0;
-    			Constraints.ipadx=0;
-    			Constraints.ipady=0;
-    			Constraints.gridwidth = 1;
-    			Constraints.weightx = 0.1;
-    			Constraints.weighty = 0;
-    			Constraints.fill = GridBagConstraints.HORIZONTAL;
-    			
-    			//define the size of 1/2 the screen
-    			Dimension dimHalfs = new Dimension(frame.getBounds().width/2, 100);
-    			Constraints.insets = new Insets(2,2,2,2);
-    			
-    		    JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
-    		    WeekLabel.setFont(Font40); //set the label's font
-    		    WeekLabel.setLineWrap(true); //set the line wrap
-    		    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
-    		    WeekLabel.setEditable(false); //make it so the text area cannot be edited
-    		    //set the size of the label to take up half the screen width
-    		    WeekLabel.setPreferredSize(dimHalfs);
-    		    WeekLabel.setMinimumSize(dimHalfs);
-    		    WeekLabel.setMaximumSize(dimHalfs);
-    		    
-    		    WeekLabel.invalidate(); //mark this label as not up to date
-    		    panel.add(WeekLabel, Constraints); //add the label to the panel
-    		    
-    			Constraints.gridx=1; //set the constraints to put the next element in the second column
-    			JTextArea MoneyMoral = new JTextArea("Money Points: " + iMoney + "\nMoral Points: " + iMoral); //set the label text to state the money and moral points
-    			
-    			//set the label's font and wrap as before. Set the size to take up half the screen.
-    			MoneyMoral.setFont(Font40);
-    			MoneyMoral.setLineWrap(true);
-    			MoneyMoral.setWrapStyleWord(true);
-    			MoneyMoral.setEditable(false);
-    			MoneyMoral.setPreferredSize(dimHalfs);
-    			MoneyMoral.setMinimumSize(dimHalfs);
-    			MoneyMoral.setMaximumSize(dimHalfs);
-    			
-    			MoneyMoral.invalidate(); //mark the label as not up to date and add it to the panel
-    		    panel.add(MoneyMoral, Constraints);
-    		    
-    		    //create a text area with the situation on the next line and set it up to take up the whole line
-    			Constraints.gridx=0;
-    			Constraints.gridy=1;
-    			Constraints.weightx = 0.5;
-    			Constraints.weighty = 0.5;
-    			Constraints.fill = GridBagConstraints.BOTH;
-    			Constraints.gridwidth=2;
-    			Constraints.ipady=100; //add extra padding
-    			JTextArea Situation = new JTextArea(Situations[iWeek - 1]);
-    			Situation.setFont(new Font("Times New Roman", Font.PLAIN, 48)); //set the font to TNR 48
-    			//set the JTextArea properties as before
-    			Situation.setLineWrap(true);
-    			Situation.setWrapStyleWord(true);
-    			Situation.setEditable(false);
-    			Situation.setPreferredSize(null);
-    			Situation.invalidate(); //mark the text area as not updated
-    		    panel.add(Situation, Constraints); //add it to the panel
-    		    
-    		    Constraints.gridy=2;
-    			Constraints.gridwidth=1;
-    			Constraints.ipady=0;
-    			Constraints.weightx = 0.1;
-    			Constraints.fill = GridBagConstraints.BOTH;
-    			Option1 = new JButton(Options[0][iWeek - 1]);
-    			Option1.setFont(Font40);
-    			Option1.setPreferredSize(dimHalfs);
-    			Option1.setMinimumSize(dimHalfs);
-    			Option1.setMaximumSize(dimHalfs);
-    			Option1.invalidate();
-    		    panel.add(Option1, Constraints);
-    		    
-    		    Constraints.gridx=1;
-    			Option2 = new JButton(Options[1][iWeek - 1]);
-    			Option2.setFont(Font40);
-    			Option2.setPreferredSize(dimHalfs);
-    			Option2.setMinimumSize(dimHalfs);
-    			Option2.setMaximumSize(dimHalfs);
-    			Option2.invalidate();
-    		    panel.add(Option2, Constraints);
-    		    
-    		    Constraints.gridx=0;
-    		    Constraints.gridy=3;
-    			Option3 = new JButton(Options[2][iWeek - 1]);
-    			Option3.setFont(Font40);
-    			Option3.setPreferredSize(dimHalfs);
-    			Option3.setMinimumSize(dimHalfs);
-    			Option3.setMaximumSize(dimHalfs);
-    			Option3.invalidate();
-    		    panel.add(Option3, Constraints);
-    		    
-    		    Constraints.gridx=1;
-    			Option4 = new JButton(Options[3][iWeek - 1]);
-    			Option4.setFont(Font40);
-    			Option4.setPreferredSize(dimHalfs);
-    			Option4.setMinimumSize(dimHalfs);
-    			Option4.setMaximumSize(dimHalfs);
-    			Option4.invalidate();
-    		    panel.add(Option4, Constraints);
-    		    
-    		    panel.revalidate();
-    			panel.repaint();
-    			ButtonClicks();
+       			DisplayQuestion();
     		}
-    		 });
+    	});
     }
     
-    public void ButtonClicks() {
-    	Option1.addActionListener(new ActionListener() {
+    public void DisplayQuestion() {
+    	panel.removeAll(); //remove the label and button from the panel
+			
+		//reset the constraints to fill horizontally starting in the top left cell
+		Constraints.gridx=0;
+		Constraints.gridy=0;
+		Constraints.ipadx=0;
+		Constraints.ipady=0;
+		Constraints.gridwidth = 1;
+		Constraints.weightx = 0.1;
+		Constraints.weighty = 0;
+		Constraints.fill = GridBagConstraints.HORIZONTAL;
+		
+		//define the size of 1/2 the screen
+		Dimension dimHalfs = new Dimension(frame.getBounds().width/2, 100);
+		Constraints.insets = new Insets(2,2,2,2);
+		
+	    JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
+	    WeekLabel.setFont(Font40); //set the label's font
+	    WeekLabel.setLineWrap(true); //set the line wrap
+	    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
+	    WeekLabel.setEditable(false); //make it so the text area cannot be edited
+	    //set the size of the label to take up half the screen width
+	    WeekLabel.setPreferredSize(dimHalfs);
+	    WeekLabel.setMinimumSize(dimHalfs);
+	    WeekLabel.setMaximumSize(dimHalfs);
+	    
+	    WeekLabel.invalidate(); //mark this label as not up to date
+	    panel.add(WeekLabel, Constraints); //add the label to the panel
+	    
+		Constraints.gridx=1; //set the constraints to put the next element in the second column
+		JTextArea MoneyMoral = new JTextArea("Money Points: " + iMoney + "\nMoral Points: " + iMoral); //set the label text to state the money and moral points
+		
+		//set the label's font and wrap as before. Set the size to take up half the screen.
+		MoneyMoral.setFont(Font40);
+		MoneyMoral.setLineWrap(true);
+		MoneyMoral.setWrapStyleWord(true);
+		MoneyMoral.setEditable(false);
+		MoneyMoral.setPreferredSize(dimHalfs);
+		MoneyMoral.setMinimumSize(dimHalfs);
+		MoneyMoral.setMaximumSize(dimHalfs);
+		
+		MoneyMoral.invalidate(); //mark the label as not up to date and add it to the panel
+	    panel.add(MoneyMoral, Constraints);
+	    
+	    //create a text area with the situation on the next line and set it up to take up the whole line
+		Constraints.gridx=0;
+		Constraints.gridy=1;
+		Constraints.weightx = 0.5;
+		Constraints.weighty = 0.5;
+		Constraints.fill = GridBagConstraints.BOTH;
+		Constraints.gridwidth=2;
+		Constraints.ipady=100; //add extra padding
+		JTextArea Situation = new JTextArea(Situations[iWeek - 1]);
+		Situation.setFont(new Font("Times New Roman", Font.PLAIN, 48)); //set the font to TNR 48
+		//set the JTextArea properties as before
+		Situation.setLineWrap(true);
+		Situation.setWrapStyleWord(true);
+		Situation.setEditable(false);
+		Situation.setPreferredSize(null);
+		Situation.invalidate(); //mark the text area as not updated
+	    panel.add(Situation, Constraints); //add it to the panel
+	    
+	    Constraints.gridy=2;
+		Constraints.gridwidth=1;
+		Constraints.ipady=0;
+		Constraints.weightx = 0.1;
+		Constraints.fill = GridBagConstraints.BOTH;
+		Option1 = new JButton("<html>" + Options[0][iWeek-1]);
+		Option1.setFont(Font40);
+		Option1.setPreferredSize(dimHalfs);
+		Option1.setMinimumSize(dimHalfs);
+		Option1.setMaximumSize(dimHalfs);
+		Option1.invalidate();
+	    panel.add(Option1, Constraints);
+	    
+	    Constraints.gridx=1;
+		Option2 = new JButton("<html>" + Options[1][iWeek - 1]);
+		Option2.setFont(Font40);
+		Option2.setPreferredSize(dimHalfs);
+		Option2.setMinimumSize(dimHalfs);
+		Option2.setMaximumSize(dimHalfs);
+		Option2.invalidate();
+	    panel.add(Option2, Constraints);
+	    
+	    if (!Options[2][iWeek-1].equals("N/A")) {
+		    Constraints.gridx=0;
+		    Constraints.gridy=3;
+			Option3 = new JButton("<html>" + Options[2][iWeek - 1]);
+			Option3.setFont(Font40);
+			Option3.setPreferredSize(dimHalfs);
+			Option3.setMinimumSize(dimHalfs);
+			Option3.setMaximumSize(dimHalfs);
+			Option3.invalidate();
+		    panel.add(Option3, Constraints);
+		    
+		    Constraints.gridx=1;
+			Option4 = new JButton("<html>" + Options[3][iWeek - 1]);
+			Option4.setFont(Font40);
+			Option4.setPreferredSize(dimHalfs);
+			Option4.setMinimumSize(dimHalfs);
+			Option4.setMaximumSize(dimHalfs);
+			Option4.invalidate();
+		    panel.add(Option4, Constraints);
+	    }
+	    
+	    panel.revalidate();
+		panel.repaint();
+		ButtonClicks();
+    }
+    
+    public void ButtonClicks() { //this method has the action listeners for all four buttons
+    	Option1.addActionListener(new ActionListener() { //All of the buttons work the same way. When the button is clicked, the scores are incremented and the outcome is displayed with the appropriate message.
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				iMoney += OptionScores[0][0][iWeek-1];
 				iMoral += OptionScores[1][0][iWeek-1];
 				iSocialCredit += OptionScores[2][0][iWeek-1];
-				DisplayOutcome(Outcomes[0][iWeek-1]);
+				DisplayOutcome(Outcomes[0][iWeek-1], false);
 			}
     		
     	});
@@ -215,7 +221,7 @@ public class Frame {
 				iMoney += OptionScores[0][1][iWeek-1];
 				iMoral += OptionScores[1][1][iWeek-1];
 				iSocialCredit += OptionScores[2][1][iWeek-1];
-				DisplayOutcome(Outcomes[1][iWeek-1]);
+				DisplayOutcome(Outcomes[1][iWeek-1], false);
 			}
     		
     	});
@@ -227,7 +233,7 @@ public class Frame {
 				iMoney += OptionScores[0][2][iWeek-1];
 				iMoral += OptionScores[1][2][iWeek-1];
 				iSocialCredit += OptionScores[2][2][iWeek-1];
-				DisplayOutcome(Outcomes[2][iWeek-1]);
+				DisplayOutcome(Outcomes[2][iWeek-1], false);
 			}
     		
     	});
@@ -239,13 +245,14 @@ public class Frame {
 				iMoney += OptionScores[0][3][iWeek-1];
 				iMoral += OptionScores[1][3][iWeek-1];
 				iSocialCredit += OptionScores[2][3][iWeek-1];
-				DisplayOutcome(Outcomes[3][iWeek-1]);
+				DisplayOutcome(Outcomes[3][iWeek-1], false);
 			}
     		
     	});
     }
     
-    public void DisplayOutcome(String sOutcome) {
+    public void DisplayOutcome(String sOutcome, boolean bEnding) {
+    	iWeek++;
     	panel.removeAll();
     	Constraints.fill = GridBagConstraints.BOTH;
 	    Constraints.gridx = 0;
@@ -262,6 +269,9 @@ public class Frame {
 	    SituationLabel.setPreferredSize(null);
 	    SituationLabel.invalidate();
 	    panel.add(SituationLabel, Constraints);
+	    if (bEnding) {
+	    	Next = new JButton("Game Over");
+	    }
 	    Constraints.gridy = 1;
 	    Constraints.ipady = 200;
 	    Constraints.weighty = 0;
@@ -271,5 +281,47 @@ public class Frame {
 	    panel.add(Next, Constraints);
 	    panel.revalidate();
 	    panel.repaint();
+	    if (bEnding) {
+	    	frame.setEnabled(false);
+	    }
+	    Next.addActionListener(new ActionListener(){ //Add an action listener to the button that waits for it to be clicked
+    		@Override
+    		public void actionPerformed(ActionEvent e) { //When the button is clicked . . .
+    			if (iWeek<21) {
+    				DisplayQuestion();
+    			} else {
+    				Outcomes();
+    			}
+    		}
+    	}); 
     }
+    
+
+    //this method will calculate and print out the user's outcome 
+    public void Outcomes(){
+       //special ending
+      if(iSocialCredit >= 6){
+         DisplayOutcome("You were kidnapped in the night by the CCP, and you were taken to the glorious Republic of China. There, Xi Jinping greeted you as an honorable guest and you were placed on the prestigious Social Credit Committee along with the Wok and John Xina. You have bing chilling every since.", true);
+        }
+        //low money low moral
+        else if(iMoney <= 8) {
+          if(iMoral <= -2){
+             DisplayOutcome("Without any money or morality, you do not end up going to college. However, you need a means of making a living, so you decide to ask your cousin for advice since you know that he’s rich.You end up in jail for selling drugs and deviously licking toilets with your cousin.", true);
+            }
+            //low money high moral
+          else if (iMoral >= -1){
+        	  DisplayOutcome("You end up living with your parents and help them do chores and even get to try out extreme ironing in real life circumstances. You also decide to get into the pro gaming industry, playing clash royale with royale giant elite barbarian cycle.", true);
+               }
+
+          //high money low moral
+          }else if(iMoney >= 9){
+              if(iMoral <= -2){
+                  DisplayOutcome("You end up as a high-profile banker whose profits are mostly due to sus operations such as running a drug cartel and counterfeit operations. You also make bank from deviously licking soap dispensers from elementary schools. With the little amount of moral points that you have, you decide to pour your kindness into warning people about their cars extended warranty.", true);
+                  }
+                 //high money high moral
+                 else if(iMoral >= -1){
+              	   DisplayOutcome("You end up a good businessman with a loving spouse, children, and pets. You have plenty of money and do not need to struggle ever again. You are living the American dream. With all of your extra money, you decide to donate it to charity, and become a notable sponsor.", true);
+        }
+      } 
+   }
 }
