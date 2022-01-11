@@ -1,1 +1,422 @@
-You are a senior at The Highschool, It’s your final year and your decisions will greatly impact how your life will turn out in the future. Based on your choices you could become a druggie or a millionaire or even both! Jk :) pls choose well
+Welcome to our game, Cool Guy at The Highschool. You are a senior at The Highschool. It’s your final year and your decisions will greatly impact how your life will turn out in the future. Each decision you make changes the moral and money points you have. You start out with 50 moral points and 10 money points. Be careful—based on your choices you could become a druggie or a millionaire or even both! Jk :) pls choose well.
+While walking in the hallway, you see what looks to be a USB stick. What do you do?
+Leave it there
+0
+1
+0
+You continue on your way to your next class and arrive on time.
+Pick it up and keep it
+-1
+-1
+0
+After you go back home, you remember the USB looking stick in your pocket and decide to plug it into your school computer. Unfortunately, it was a vape stick :(. The toxic fumes of the stick cause your school computer to overload and ultimately stop working. Your parents are mad and refuse to help you pay back the school, so you have to dig into your weekly allowance to pay the school back. 
+Inspect it
+0
+-1
+0
+While inspecting the “USB stick,” a teacher comes over and is about to bust you. In a panic, you throw the usb stick, which turns out to be a vape stick, at the teacher and run while the teacher tries out the vape.
+Step on it
+-1
+0
+0
+You step on the USB stick, which turns out to be a really buff dudes vape stick. You have no idea how he is still in high school, but he threatens you until and demands you reimburse him.
+You are in a dire need of cash. Your cousin knows a way to get cash fast.
+Ask him for help
+1
+-1
+0
+It turns out he is involved in illegal drug dealings. You are peer pressured into joining him. Although you sell the drugs timidly at first, you soon gain confidence and become a prominent drug dealer.
+Go get a job
+2
+1
+0
+You find a job at a local fast food restaurant, kurger bing.
+Ask your parents for money
+-1
+-1
+0
+Your parents get mad that you are being too spoiled and instead they take some of your money away. You also receive a harsh lecture about how when they were young they had to go help their parents in their farm and do back breaking work and didn’t receive any money from it.
+Work for the local socialist party
+0
+1
+1
+You work for the local socialist party. You would make President Xi proud.
+You have a test in your hardest class tomorrow. What do you do?
+Study
+2
+1
+0
+You pour all your efforts into study for the mega hard test and you perform decently on the test. Your parents find out your good test score and give you some money as a reward.
+Game instead
+1
+0
+-1
+You make some cash after betting in a game. However, you do not end up doing well on the test as you did sleep in the night.
+Go to sleep
+0
+0
+0
+You are refreshed for the test, however, you know none of the content that is on the test. You perform less than average on the test, but you feel happy because of the good quality of your sleep
+Take the L
+-1
+-1
+0
+You give up and turn in an empty test. Your parents find out and take away some money. You are demoralized.
+The school dance is the day after tomorrow. What do you do?
+Ask out your long time crush
+-1
+1
+0
+Unfortunately, you were rejected and you spent money on flowers which were thrown into your face. You are sad and cry yourself to sleep on the night of the dance.
+Ask out your cousin’s crush
+-1
+-2
+0
+Your cousin’s crush also happens to be a drug dealer, and  your cousin’s crush sells you some drugs. 
+Ask out the most attractive person at school
+0
+0
+0
+They accept! Then your alarm rings and you wake up, what a nice dream :). You then cry yourself back to sleep and are late to school.
+Go with a group of friends
+-1
+1
+0
+Your friends ditch you :(. You cry yourself to sleep in your brand new suit.
+You have to retake the ACT
+Study and get a good night sleep
+1
+1
+0
+You have studied well and scored a 36! You now have more scholarship options.
+Game all night
+1
+-1
+0
+It turns out that the ACT had a weird problem and they accidentally gave everyone who took it a 36. They are too lazy to fix the problem and you receive a free 36! Your parents hear you got a 36 and give you some money as a reward!
+N/A
+0
+0
+0
+N/A
+N/A
+0
+0
+0
+N/A
+It’s Thanksgiving break! What do you plan to do
+Help your parents cook
+1
+1
+0
+Your parents are very happy with you and even give you some money as a reward.
+Play games
+-1
+0
+-1
+You play games the whole break and your parents are mad that you are not thankful for all that you have. They take some of your money.
+Grind for school
+0
+1
+1
+You study hard for the upcoming term, and do well on your first test when you go back to school.  However, in return, you lost all your friends because they ditched you for being a nerd.
+Hang out with your cousin because you have no friends
+1
+-1
+0
+You go sell drugs with your cousin and make some extra cash.
+You see a kid crying alone at the supermarket in a corner, what do you do?
+Help the kid
+-2
+1
+0
+A lady at the supermarket thinks you look sus and calls the cops on you. You are forced to pay bail to get out of jail after you were wrongly arrested. 
+Ignore the kid
+0
+-1
+0
+You continue on your way to buy some green onions for your mom
+N/A
+0
+0
+0
+N/A
+N/A
+0
+0
+0
+N/A
+You are sitting alone at lunch. A group of kids invite you to sit with them. What do you do?
+Sit with them
+0
+1
+0
+You sit with them and you find out that you go along pretty well with them. Now you might have some friends.
+Say you’re going to sit with someone else
+0
+-1
+0
+You lied because you felt embarrassed, but in reality you have no one to sit with. They pity you and ask if you’re sure but once again you lie.
+Ignore them
+0
+-1
+0
+The group of people feel slightly hurt and decide to leave you alone, and now you are known as the unsociable and rude dude.
+Talk to them about the CCP
+0
+0
+2
+Talking about the CCP piques their interest. President Xi would be proud.
+You realize that college applications are due very soon, and have not started on a single one of them. What do you do?
+You decide to cut down the list to one community college
+1
+0
+0
+The community college you’re looking at accepts you!
+Decide to get on the grind and apply for Tsing Hua.
+0
+0
+1
+After looking at several colleges, you decide that tsing hua is the best choice for you. Tsing hua defers you, and you cry yourself to sleep.
+You are too lazy to apply for college and take the L.
+0
+-1
+0
+You decide not to go to college and instead work at a fast food restaurant for the rest of your life.
+You apply to a culinary school to learn how to be a chef
+0
+0
+0
+You take a cooking test and your food makes the judges throw up. You are immediately sent home and cry yourself to sleep.
+ It is winter break! What do you do?
+Go last minute Christmas shopping 
+-1
+1
+0
+Your parents are happy that you thought about them and treat you to your favorite Christmas pie
+Play games
+-1
+-1
+0
+Your parents are mad that you wasted the break on your video games and take some of your money
+N/A
+0
+0
+0
+N/A
+N/A
+0
+0
+0
+N/A
+While walking in a shady part of the school, you trip over someone’s brand new air Jordan’s and they suddenly punch you in the stomach! What do you do?
+Run and snitch to the teacher
+0
+1
+0
+The teacher sees how buff the opponent is and runs away. You get beaten badly  :(
+Offer them money
+-3
+1
+0
+You offer him $3, your entire allowance for the month, he gratefully accepts the money and you almost escape unharmed, but he punches one last time before dipping.
+Fake an injury and punch back
+0
+-1
+0
+You are able to land one solid hit on his rock hard biceps, but then you get pummeled by his lightning quick fists. It turns out that you both have the same taste in shoes! You two quickly become friends after your near death experience.
+Cry
+1
+-1
+0
+He takes pity on you and offers you money instead.
+For the next semester you want to get rid of advanced pre algebra because it is too advanced for you. What class do you want to take instead?
+AP Chinese 
+0
+0
+1
+The Chinese teacher takes a liking to you, and you do really well in the class.
+AP Calculus BC
+0
+-2
+0
+You realize that just because the simple stuff is too hard doesn’t mean that the hard stuff is hard. You fail the class :(
+AP Accounting 
+2
+0
+0
+You take AP Accounting, and become cracked at money. You can now invest and manage your finances very well.
+AP Marketing 
+1
+-1
+0
+You find the class is a complete scam, and all you learn is how to deal drugs. Despite this, you end up doing extremely well in this class. You would make your cousin proud.
+You have a group presentation in your business class. What do you do?
+Practice your lines
+0
+1
+0
+You mess up 2 times but the teacher is proud of you because you are always sleeping in their class
+Play games instead of practicing
+-3
+-1
+0
+You completely improvise on the presentation and your group is very annoyed at you. You give them each a dollar to make it up to them
+N/A
+0
+0
+0
+N/A
+N/A
+0
+0
+0
+N/A
+While on the bus, the bus driver faints. What do you do?
+Take the L
+0
+1
+0
+You decide that you have no regrets, and will accept your fate. While writing your will, you find that the bus has stopped. No one was harmed.
+Drive the bus
+1
+1
+0
+Your quick instincts kick in, and you hurry to the wheel. You drive the bus despite having no driving experience while fighting off 2 guys saying that it's their turn to drive the bus. However, you know that they drove it last time, so you successfully fight them off.
+Jump out the bus
+0
+-1
+0
+You open the window and dive out gracefully using the snow as cushioning and tuck yourself into a roll. Watching thousands of parkour videos have paid off and you walk away from the bus unscathed. Good thing the bus soon stops on its own.
+Play games
+0
+-1
+0
+You decide that you would like the last moments of your life to be playing games. You take out your phone and start playing clash royale. However, you are quickly dismayed to see that the last game of your life will be against a Royal Giant Elite Barbarian cycle deck. However, the bus miraculously stops and everyone is safe.
+You drink a lot of milk, forgetting that you’re lactose intolerant. You then need to take a dump really badly and go to the bathroom, but all of the stalls are in use. What do you do?
+Run to a different bathroom
+0
+1
+0
+You don’t make it in time to the only other bathroom on the other side of the school because running made your metabolism work faster. You hide yourself in the bathroom while you cry and call your mom to pick you up .
+Jump over a used stall to share
+0
+-1
+0
+Due to your extreme rush of adrenaline, you are able to jump the stall. Luckily, no one is in the stall, and you are able to go about your business in peace.
+Run to the bathroom of the opposite gender
+0
+-1
+0
+You hear a teacher in one of the stalls and rush into the other stall. You hide in the stall and take care of your business until you hear the teacher leave. Then you run out of the bathroom bumping into the teacher who was heading back into the bathroom. They instantly get mad and send you to the principal's office.
+Take the L
+0
+1
+1
+You figure that there is not enough time to go to the bathroom, and you accept your fate. You start gaming to relieve your stress, but cry because your clash royale opponent is playing Royale Giant and Elite barbarians.
+You decide you are in a dire need of cash. What do you do?
+Invest in mutual funds
+2
+0
+0
+You invest well and receive money!
+Invest in GameStop
+-2
+0
+0
+You pour all of your money into GME. However, this goes sideways, and you lose all of your money.
+N/A
+0
+0
+0
+N/A
+N/A
+0
+0
+0
+N/A
+You decide that you need a new hobby. What do you do?
+Join a choir 
+0
+0
+1
+It turns out that you joined a Chinese choir! 
+Extreme Ironing
+1
+1
+0
+Your mom is very pleased that you are helping out around the house and give you some extra cash
+Competitive Duck Herding
+1
+0
+0
+You win the grand prize at the duck herding derby! However, for dinner that night, your mom coincidentally buys duck. Due to your newfound passion for ducks, you are unable to eat the ducks, forcing you to starve that night.
+Finance club
+1
+0
+0
+You learn how to better manage your money and even make some in the process.
+You’re almost done with High School. You decide to mix things up and read a book. What do you read?
+Intro to competitive ironing
+1
+1
+0
+You become a pro at competitive ironing, winning several ironing competitions and making some cash. You are hopeful that you will have a career in extreme ironing 
+The Intelligent Investor
+-1
+-1
+0
+Partway through, you stop reading and fall asleep. You wasted your money on buying the book, and you didn’t learn anything in the process.
+Of Mice and Men
+1
+1
+0
+You finally get around to reading the book you were supposed to read in 9th grade English. Your parents see you with it and are overjoyed, so they raise your allowance.
+The Art Of War
+0
+1
+1
+You decide to read Sun Tzu’s classic in Chinese. Getting through is a bit of a struggle, but with google translate, you understand most of it. You become so immersed in Chinese culture that you soon purchase a pocket communist manifesto as well.
+It’s graduation! What do you do?
+Skip and play games instead
+-1
+-1
+0
+Your mom is mad and takes some of your money because she was looking forward to her only child’s graduation
+Attend 
+1
+1
+0
+You attend and almost fall asleep waiting for your name to be called. Your mom gives you some money as a gift
+N/A
+0
+0
+0
+N/A
+N/A
+0
+0
+0
+N/A
+Your mom wants to know if you want to have a graduation party and who you are inviting. What do you tell her?
+Lie and say you have friends
+1
+-1
+0
+Your mom finds out you have no friends to invite and gives you some pity money. You cry yourself to sleep
+Invite your cousin
+1
+0
+0
+Your cousin is happy he was invited and gives you some congratulatory money. He also gives you some of the good stuff😏.
+Tell her you don’t want a party
+1
+0
+0
+Your mom gives you some money instead of throwing a party and you play games. You spend all the money on robux, v-bucks, and riot points.
+Tell her to invite whoever
+0
+0
+-1
+Your mom takes the opportunity to invite all of her friends and make your graduation into her own party. The joke’s on her—when she tries to brag about your accomplishments, she realizes that you don’t have any and looks bad in front of her friends. 
+
