@@ -79,7 +79,7 @@ public class Frame {
     
     public void AskQuestion() {
     	JButton StartButton = new JButton("Start Playing"); //Create a start button
-    	StartButton.setFont(new Font("Times New Roman", Font.PLAIN, 20)); //set the button font
+    	StartButton.setFont(Font40); //set the button font
 	    panel.add(StartButton, Constraints); //Add the start button to the panel with the constraints defined in the default constructor
 	    frame.setVisible(true); //Make the frame visible
     	StartButton.addActionListener(new ActionListener(){ //Add an action listener to the button that waits for it to be clicked
@@ -252,12 +252,50 @@ public class Frame {
     }
     
     public void DisplayOutcome(String sOutcome, boolean bEnding) {
-    	iWeek++;
     	panel.removeAll();
-    	Constraints.fill = GridBagConstraints.BOTH;
+    	Constraints.fill = GridBagConstraints.HORIZONTAL;
 	    Constraints.gridx = 0;
 	    Constraints.gridy = 0;
 	    Constraints.gridwidth = 1;
+	    Constraints.ipady = 0;
+	    Constraints.weightx = 0.1;
+	    Constraints.weighty = 0.;
+    	//define the size of 1/2 the screen
+    	Dimension dimHalfs = new Dimension(frame.getBounds().width/2, 100);
+    	if (bEnding)
+    		iWeek = 20;
+    	JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
+	    WeekLabel.setFont(Font40); //set the label's font
+	    WeekLabel.setLineWrap(true); //set the line wrap
+	    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
+	    WeekLabel.setEditable(false); //make it so the text area cannot be edited
+	    //set the size of the label to take up half the screen width
+	    WeekLabel.setPreferredSize(dimHalfs);
+	    WeekLabel.setMinimumSize(dimHalfs);
+	    WeekLabel.setMaximumSize(dimHalfs);
+	    
+	    WeekLabel.invalidate(); //mark this label as not up to date
+	    panel.add(WeekLabel, Constraints); //add the label to the panel
+	    
+		Constraints.gridx=1; //set the constraints to put the next element in the second column
+		JTextArea MoneyMoral = new JTextArea("Money Points: " + iMoney + "\nMoral Points: " + iMoral); //set the label text to state the money and moral points
+		
+		//set the label's font and wrap as before. Set the size to take up half the screen.
+		MoneyMoral.setFont(Font40);
+		MoneyMoral.setLineWrap(true);
+		MoneyMoral.setWrapStyleWord(true);
+		MoneyMoral.setEditable(false);
+		MoneyMoral.setPreferredSize(dimHalfs);
+		MoneyMoral.setMinimumSize(dimHalfs);
+		MoneyMoral.setMaximumSize(dimHalfs);
+		
+		MoneyMoral.invalidate(); //mark the label as not up to date and add it to the panel
+	    panel.add(MoneyMoral, Constraints);
+	    
+	    Constraints.fill = GridBagConstraints.BOTH;
+    	Constraints.gridx=0;
+	    Constraints.gridy = 1;
+	    Constraints.gridwidth = 2;
 	    Constraints.ipady = 150;
 	    Constraints.weightx = 0.5;
 	    Constraints.weighty = 0.5;
@@ -272,7 +310,7 @@ public class Frame {
 	    if (bEnding) {
 	    	Next = new JButton("Game Over");
 	    }
-	    Constraints.gridy = 1;
+	    Constraints.gridy = 3;
 	    Constraints.ipady = 200;
 	    Constraints.weighty = 0;
 	    Constraints.fill = GridBagConstraints.HORIZONTAL;
@@ -284,6 +322,7 @@ public class Frame {
 	    if (bEnding) {
 	    	frame.setEnabled(false);
 	    }
+    	iWeek++;
 	    Next.addActionListener(new ActionListener(){ //Add an action listener to the button that waits for it to be clicked
     		@Override
     		public void actionPerformed(ActionEvent e) { //When the button is clicked . . .
