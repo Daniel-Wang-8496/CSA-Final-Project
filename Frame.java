@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.Scanner;
 import java.awt.*;
 import java.awt.event.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Frame {
@@ -209,7 +211,7 @@ public class Frame {
 				iMoney += OptionScores[0][0][iWeek-1];
 				iMoral += OptionScores[1][0][iWeek-1];
 				iSocialCredit += OptionScores[2][0][iWeek-1];
-				DisplayOutcome(Outcomes[0][iWeek-1], false);
+				DisplayOutcome(Outcomes[0][iWeek-1], false, null);
 			}
     		
     	});
@@ -221,7 +223,7 @@ public class Frame {
 				iMoney += OptionScores[0][1][iWeek-1];
 				iMoral += OptionScores[1][1][iWeek-1];
 				iSocialCredit += OptionScores[2][1][iWeek-1];
-				DisplayOutcome(Outcomes[1][iWeek-1], false);
+				DisplayOutcome(Outcomes[1][iWeek-1], false, null);
 			}
     		
     	});
@@ -233,7 +235,7 @@ public class Frame {
 				iMoney += OptionScores[0][2][iWeek-1];
 				iMoral += OptionScores[1][2][iWeek-1];
 				iSocialCredit += OptionScores[2][2][iWeek-1];
-				DisplayOutcome(Outcomes[2][iWeek-1], false);
+				DisplayOutcome(Outcomes[2][iWeek-1], false, null);
 			}
     		
     	});
@@ -245,13 +247,13 @@ public class Frame {
 				iMoney += OptionScores[0][3][iWeek-1];
 				iMoral += OptionScores[1][3][iWeek-1];
 				iSocialCredit += OptionScores[2][3][iWeek-1];
-				DisplayOutcome(Outcomes[3][iWeek-1], false);
+				DisplayOutcome(Outcomes[3][iWeek-1], false, null);
 			}
     		
     	});
     }
     
-    public void DisplayOutcome(String sOutcome, boolean bEnding) {
+    public void DisplayOutcome(String sOutcome, boolean bEnding, Icon image) {
     	panel.removeAll();
     	Constraints.fill = GridBagConstraints.HORIZONTAL;
 	    Constraints.gridx = 0;
@@ -292,13 +294,6 @@ public class Frame {
 		MoneyMoral.invalidate(); //mark the label as not up to date and add it to the panel
 	    panel.add(MoneyMoral, Constraints);
 	    
-	    Constraints.fill = GridBagConstraints.BOTH;
-    	Constraints.gridx=0;
-	    Constraints.gridy = 1;
-	    Constraints.gridwidth = 2;
-	    Constraints.ipady = 150;
-	    Constraints.weightx = 0.5;
-	    Constraints.weighty = 0.5;
 	    JTextArea SituationLabel = new JTextArea(sOutcome);
 	    SituationLabel.setFont(Font40);
 	    SituationLabel.setLineWrap(true);
@@ -306,13 +301,42 @@ public class Frame {
 	    SituationLabel.setEditable(false);
 	    SituationLabel.setPreferredSize(null);
 	    SituationLabel.invalidate();
-	    panel.add(SituationLabel, Constraints);
 	    if (bEnding) {
-	    	Next = new JButton("Game Over");
+	    	JPanel imageAndText = new JPanel(new GridBagLayout());
+	    	Constraints.gridy = 0;
+	    	imageAndText.add(SituationLabel, Constraints);
+	    	Constraints.gridy = 1;
+	    	Constraints.weighty = 0.5;
+	    	Constraints.fill = GridBagConstraints.HORIZONTAL;
+	    	JLabel imageLabel = new JLabel(image);
+	    	imageLabel.setSize(1000, 100);
+	    	imageAndText.add(imageLabel, Constraints);
+	    	Constraints.fill = GridBagConstraints.BOTH;
+	    	Constraints.gridx=0;
+		    Constraints.gridy = 1;
+		    Constraints.gridwidth = 2;
+		    Constraints.ipady = 150;
+		    Constraints.weightx = 0.5;
+		    Constraints.weighty = 0.5;
+	    	panel.add(imageAndText, Constraints);
+	    } else {
+	    	Constraints.fill = GridBagConstraints.BOTH;
+	    	Constraints.gridx=0;
+		    Constraints.gridy = 1;
+		    Constraints.gridwidth = 2;
+		    Constraints.ipady = 150;
+		    Constraints.weightx = 0.5;
+		    Constraints.weighty = 0.5;
+	    	panel.add(SituationLabel, Constraints);
 	    }
 	    Constraints.gridy = 3;
 	    Constraints.ipady = 200;
 	    Constraints.weighty = 0;
+	    if (bEnding) {
+	    	Next = new JButton("Game Over");
+	    	Constraints.ipady = 0;
+	    }
+	    
 	    Constraints.fill = GridBagConstraints.HORIZONTAL;
 	    Next.setFont(Font40);
 	    Next.invalidate();
@@ -329,7 +353,11 @@ public class Frame {
     			if (iWeek<21) {
     				DisplayQuestion();
     			} else {
-    				Outcomes();
+    				try {
+						Outcomes();
+					} catch (IOException e1) {
+						System.out.println("Error reading image");
+					}
     			}
     		}
     	}); 
@@ -337,29 +365,29 @@ public class Frame {
     
 
     //this method will calculate and print out the user's outcome 
-    public void Outcomes(){
+    public void Outcomes() throws IOException{
        //special ending
       if(iSocialCredit >= 6){
-         DisplayOutcome("You were kidnapped in the night by the CCP, and you were taken to the glorious Republic of China. There, Xi Jinping greeted you as an honorable guest and you were placed on the prestigious Social Credit Committee along with the Wok and John Xina. You have bing chilling every since.", true);
+         DisplayOutcome("You were kidnapped in the night by the CCP, and you were taken to the glorious Republic of China. There, Xi Jinping greeted you as an honorable guest and you were placed on the prestigious Social Credit Committee along with the Wok and John Xina. You have bing chilling every since.", true, new ImageIcon(ImageIO.read(new File("SpecialEnding.png"))));
         }
         //low money low moral
         else if(iMoney <= 8) {
           if(iMoral <= -2){
-             DisplayOutcome("Without any money or morality, you do not end up going to college. However, you need a means of making a living, so you decide to ask your cousin for advice since you know that he’s rich.You end up in jail for selling drugs and deviously licking toilets with your cousin.", true);
+             DisplayOutcome("Without any money or morality, you do not end up going to college. However, you need a means of making a living, so you decide to ask your cousin for advice since you know that he’s rich.You end up in jail for selling drugs and deviously licking toilets with your cousin.", true, new ImageIcon(ImageIO.read(new File("LowMoneyLowMoral.png"))));
             }
             //low money high moral
           else if (iMoral >= -1){
-        	  DisplayOutcome("You end up living with your parents and help them do chores and even get to try out extreme ironing in real life circumstances. You also decide to get into the pro gaming industry, playing clash royale with royale giant elite barbarian cycle.", true);
+        	  DisplayOutcome("You end up living with your parents and help them do chores and even get to try out extreme ironing in real life circumstances. You also decide to get into the pro gaming industry, playing clash royale with royale giant elite barbarian cycle.", true, new ImageIcon(ImageIO.read(new File("LowMoneyHighMoral.png"))));
                }
 
           //high money low moral
           }else if(iMoney >= 9){
               if(iMoral <= -2){
-                  DisplayOutcome("You end up as a high-profile banker whose profits are mostly due to sus operations such as running a drug cartel and counterfeit operations. You also make bank from deviously licking soap dispensers from elementary schools. With the little amount of moral points that you have, you decide to pour your kindness into warning people about their cars extended warranty.", true);
+                  DisplayOutcome("You end up as a high-profile banker whose profits are mostly due to sus operations such as running a drug cartel and counterfeit operations. You also make bank from deviously licking soap dispensers from elementary schools. With the little amount of moral points that you have, you decide to pour your kindness into warning people about their cars extended warranty.", true, new ImageIcon(ImageIO.read(new File("HighMoneyLowMoral.png"))));
                   }
                  //high money high moral
                  else if(iMoral >= -1){
-              	   DisplayOutcome("You end up a good businessman with a loving spouse, children, and pets. You have plenty of money and do not need to struggle ever again. You are living the American dream. With all of your extra money, you decide to donate it to charity, and become a notable sponsor.", true);
+              	   DisplayOutcome("You end up a good businessman with a loving spouse, children, and pets. You have plenty of money and do not need to struggle ever again. You are living the American dream. With all of your extra money, you decide to donate it to charity, and become a notable sponsor.", true, new ImageIcon(ImageIO.read(new File("HighMoneyHighMoral.png"))));
         }
       } 
    }
