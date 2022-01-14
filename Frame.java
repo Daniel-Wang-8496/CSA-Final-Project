@@ -38,8 +38,7 @@ public class Frame {
 	    Constraints.weightx = 0.5;
 	    
 	    JTextArea StartingTextLabel = new JTextArea(sStartingText); //create a new JTextArea for the starting text. We do not use a JLabel because JLabels do not automatically support text wrapping
-      Color color = new Color(250,237,40,100);
-	    StartingTextLabel.setBackground(color); //Make the JTextArea yellow
+	    StartingTextLabel.setBackground(Color.yellow); //Make the JTextArea yellow
 	    
 	    //Set the TextArea font to the font predefined, set it to wrap at each line, turn off the ability to edit it, and have no preferred size
 	    StartingTextLabel.setFont(Font40);
@@ -112,6 +111,7 @@ public class Frame {
 		
 	    JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
 	    WeekLabel.setFont(Font40); //set the label's font
+	    WeekLabel.setBackground(Color.YELLOW);
 	    WeekLabel.setLineWrap(true); //set the line wrap
 	    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
 	    WeekLabel.setEditable(false); //make it so the text area cannot be edited
@@ -128,6 +128,7 @@ public class Frame {
 		
 		//set the label's font and wrap as before. Set the size to take up half the screen.
 		MoneyMoral.setFont(Font40);
+		MoneyMoral.setBackground(Color.YELLOW);
 		MoneyMoral.setLineWrap(true);
 		MoneyMoral.setWrapStyleWord(true);
 		MoneyMoral.setEditable(false);
@@ -147,7 +148,7 @@ public class Frame {
 		Constraints.gridwidth=2;
 		Constraints.ipady=100; //add extra padding
 		JTextArea Situation = new JTextArea(Situations[iWeek - 1]);
-		Situation.setFont(new Font("Times New Roman", Font.PLAIN, 48)); //set the font to TNR 48
+		Situation.setFont(new Font("Times New Roman", Font.PLAIN, 48));//set the font to TNR 48
 		//set the JTextArea properties as before
 		Situation.setLineWrap(true);
 		Situation.setWrapStyleWord(true);
@@ -163,6 +164,9 @@ public class Frame {
 		Constraints.fill = GridBagConstraints.BOTH;
 		Option1 = new JButton("<html>" + Options[0][iWeek-1]);
 		Option1.setFont(Font40);
+		Option1.setBackground(Color.YELLOW);
+		Option1.setOpaque(true);
+		Option1.setBorderPainted(false);
 		Option1.setPreferredSize(dimHalfs);
 		Option1.setMinimumSize(dimHalfs);
 		Option1.setMaximumSize(dimHalfs);
@@ -172,6 +176,9 @@ public class Frame {
 	    Constraints.gridx=1;
 		Option2 = new JButton("<html>" + Options[1][iWeek - 1]);
 		Option2.setFont(Font40);
+		Option2.setBackground(Color.YELLOW);
+		Option2.setOpaque(true);
+		Option2.setBorderPainted(false);
 		Option2.setPreferredSize(dimHalfs);
 		Option2.setMinimumSize(dimHalfs);
 		Option2.setMaximumSize(dimHalfs);
@@ -183,6 +190,9 @@ public class Frame {
 		    Constraints.gridy=3;
 			Option3 = new JButton("<html>" + Options[2][iWeek - 1]);
 			Option3.setFont(Font40);
+			Option3.setBackground(Color.YELLOW);
+			Option3.setOpaque(true);
+			Option3.setBorderPainted(false);
 			Option3.setPreferredSize(dimHalfs);
 			Option3.setMinimumSize(dimHalfs);
 			Option3.setMaximumSize(dimHalfs);
@@ -192,6 +202,9 @@ public class Frame {
 		    Constraints.gridx=1;
 			Option4 = new JButton("<html>" + Options[3][iWeek - 1]);
 			Option4.setFont(Font40);
+			Option4.setBackground(Color.YELLOW);
+			Option4.setOpaque(true);
+			Option4.setBorderPainted(false);
 			Option4.setPreferredSize(dimHalfs);
 			Option4.setMinimumSize(dimHalfs);
 			Option4.setMaximumSize(dimHalfs);
@@ -269,6 +282,7 @@ public class Frame {
     		iWeek = 20;
     	JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
 	    WeekLabel.setFont(Font40); //set the label's font
+	    WeekLabel.setBackground(Color.yellow);
 	    WeekLabel.setLineWrap(true); //set the line wrap
 	    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
 	    WeekLabel.setEditable(false); //make it so the text area cannot be edited
@@ -285,6 +299,7 @@ public class Frame {
 		
 		//set the label's font and wrap as before. Set the size to take up half the screen.
 		MoneyMoral.setFont(Font40);
+		MoneyMoral.setBackground(Color.yellow);
 		MoneyMoral.setLineWrap(true);
 		MoneyMoral.setWrapStyleWord(true);
 		MoneyMoral.setEditable(false);
@@ -340,6 +355,9 @@ public class Frame {
 	    
 	    Constraints.fill = GridBagConstraints.HORIZONTAL;
 	    Next.setFont(Font40);
+	    Next.setBackground(Color.YELLOW);
+	    Next.setOpaque(true);
+		Next.setBorderPainted(false);
 	    Next.invalidate();
 	    panel.add(Next, Constraints);
 	    panel.revalidate();
