@@ -38,7 +38,8 @@ public class Frame {
 	    Constraints.weightx = 0.5;
 	    
 	    JTextArea StartingTextLabel = new JTextArea(sStartingText); //create a new JTextArea for the starting text. We do not use a JLabel because JLabels do not automatically support text wrapping
-	    StartingTextLabel.setBackground(Color.yellow); //Make the JTextArea yellow
+      Color color = new Color(250,237,40,100);
+	    StartingTextLabel.setBackground(color); //Make the JTextArea yellow
 	    
 	    //Set the TextArea font to the font predefined, set it to wrap at each line, turn off the ability to edit it, and have no preferred size
 	    StartingTextLabel.setFont(Font40);
