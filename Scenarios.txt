@@ -92,7 +92,7 @@ You have studied well and scored a 36! You now have more scholarship options.
 Game all night
 1
 -1
-0
+-1
 It turns out that the ACT had a weird problem and they accidentally gave everyone who took it a 36. They are too lazy to fix the problem and you receive a free 36! Your parents hear you got a 36 and give you some money as a reward!
 N/A
 0
@@ -197,7 +197,7 @@ Your parents are happy that you thought about them and treat you to your favorit
 Play games
 -1
 -1
-0
+-1
 Your parents are mad that you wasted the break on your video games and take some of your money
 N/A
 0
@@ -260,7 +260,7 @@ You mess up 2 times but the teacher is proud of you because you are always sleep
 Play games instead of practicing
 -3
 -1
-0
+-1
 You completely improvise on the presentation and your group is very annoyed at you. You give them each a dollar to make it up to them
 N/A
 0
@@ -291,7 +291,7 @@ You open the window and dive out gracefully using the snow as cushioning and tuc
 Play games
 0
 -1
-0
+-1
 You decide that you would like the last moments of your life to be playing games. You take out your phone and start playing clash royale. However, you are quickly dismayed to see that the last game of your life will be against a Royal Giant Elite Barbarian cycle deck. However, the bus miraculously stops and everyone is safe.
 You drink a lot of milk, forgetting that you’re lactose intolerant. You then need to take a dump really badly and go to the bathroom, but all of the stalls are in use. What do you do?
 Run to a different bathroom
@@ -381,7 +381,7 @@ It’s graduation! What do you do?
 Skip and play games instead
 -1
 -1
-0
+-1
 Your mom is mad and takes some of your money because she was looking forward to her only child’s graduation
 Attend 
 1
