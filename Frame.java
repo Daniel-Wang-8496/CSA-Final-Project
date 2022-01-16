@@ -5,6 +5,7 @@ import java.awt.event.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.util.Random;
 
 public class Frame {
 	private int iMoney = 10, iMoral = 0, iSocialCredit = 0, iWeek = 1; //These variables represent the user's money amount, moral points, social credit value, and the week number
@@ -23,6 +24,8 @@ public class Frame {
 	private JButton Option4 = new JButton();
 	private GridBagConstraints Constraints = new GridBagConstraints(); //Create a GridBagConstraint object that will be used to set the constraints for every object in the layout before adding it
 	private Font Font40 = new Font("Times New Roman", Font.PLAIN, 40); //Create a new font that most of the buttons can use
+	private String[] badchoice = {"MCoof.wav", "ohno.wav", "yoda.wav"};
+  private String filePath;
 	
     public Frame() throws IOException { //This is the default constructor that creates the window and triggers other classes
     	ReadFiles(); //Read all the file to populate the arrays
@@ -60,7 +63,7 @@ public class Frame {
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //when the window is closed, quit the program
 	    AskQuestion();
   }
-    
+
     public void ReadFiles() throws IOException{
     	File file = new File("Scenarios.txt");
         Scanner reader = new Scanner(file);
@@ -111,6 +114,7 @@ public class Frame {
 		
 	    JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
 	    WeekLabel.setFont(Font40); //set the label's font
+	    WeekLabel.setBackground(Color.YELLOW);
 	    WeekLabel.setLineWrap(true); //set the line wrap
 	    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
 	    WeekLabel.setEditable(false); //make it so the text area cannot be edited
@@ -127,6 +131,7 @@ public class Frame {
 		
 		//set the label's font and wrap as before. Set the size to take up half the screen.
 		MoneyMoral.setFont(Font40);
+		MoneyMoral.setBackground(Color.YELLOW);
 		MoneyMoral.setLineWrap(true);
 		MoneyMoral.setWrapStyleWord(true);
 		MoneyMoral.setEditable(false);
@@ -146,7 +151,7 @@ public class Frame {
 		Constraints.gridwidth=2;
 		Constraints.ipady=100; //add extra padding
 		JTextArea Situation = new JTextArea(Situations[iWeek - 1]);
-		Situation.setFont(new Font("Times New Roman", Font.PLAIN, 48)); //set the font to TNR 48
+		Situation.setFont(new Font("Times New Roman", Font.PLAIN, 48));//set the font to TNR 48
 		//set the JTextArea properties as before
 		Situation.setLineWrap(true);
 		Situation.setWrapStyleWord(true);
@@ -162,6 +167,9 @@ public class Frame {
 		Constraints.fill = GridBagConstraints.BOTH;
 		Option1 = new JButton("<html>" + Options[0][iWeek-1]);
 		Option1.setFont(Font40);
+		Option1.setBackground(Color.YELLOW);
+		Option1.setOpaque(true);
+		Option1.setBorderPainted(false);
 		Option1.setPreferredSize(dimHalfs);
 		Option1.setMinimumSize(dimHalfs);
 		Option1.setMaximumSize(dimHalfs);
@@ -171,6 +179,9 @@ public class Frame {
 	    Constraints.gridx=1;
 		Option2 = new JButton("<html>" + Options[1][iWeek - 1]);
 		Option2.setFont(Font40);
+		Option2.setBackground(Color.YELLOW);
+		Option2.setOpaque(true);
+		Option2.setBorderPainted(false);
 		Option2.setPreferredSize(dimHalfs);
 		Option2.setMinimumSize(dimHalfs);
 		Option2.setMaximumSize(dimHalfs);
@@ -182,6 +193,9 @@ public class Frame {
 		    Constraints.gridy=3;
 			Option3 = new JButton("<html>" + Options[2][iWeek - 1]);
 			Option3.setFont(Font40);
+			Option3.setBackground(Color.YELLOW);
+			Option3.setOpaque(true);
+			Option3.setBorderPainted(false);
 			Option3.setPreferredSize(dimHalfs);
 			Option3.setMinimumSize(dimHalfs);
 			Option3.setMaximumSize(dimHalfs);
@@ -191,6 +205,9 @@ public class Frame {
 		    Constraints.gridx=1;
 			Option4 = new JButton("<html>" + Options[3][iWeek - 1]);
 			Option4.setFont(Font40);
+			Option4.setBackground(Color.YELLOW);
+			Option4.setOpaque(true);
+			Option4.setBorderPainted(false);
 			Option4.setPreferredSize(dimHalfs);
 			Option4.setMinimumSize(dimHalfs);
 			Option4.setMaximumSize(dimHalfs);
@@ -201,7 +218,8 @@ public class Frame {
 	    panel.revalidate();
 		panel.repaint();
 		ButtonClicks();
-    }
+	}
+
     
     public void ButtonClicks() { //this method has the action listeners for all four buttons
     	Option1.addActionListener(new ActionListener() { //All of the buttons work the same way. When the button is clicked, the scores are incremented and the outcome is displayed with the appropriate message.
@@ -211,9 +229,40 @@ public class Frame {
 				iMoney += OptionScores[0][0][iWeek-1];
 				iMoral += OptionScores[1][0][iWeek-1];
 				iSocialCredit += OptionScores[2][0][iWeek-1];
-				DisplayOutcome(Outcomes[0][iWeek-1], false, null);
+				if (OptionScores[2][0][iWeek-1] < 0) {
+					try {
+						Audio player = new Audio("siren.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				} else if (OptionScores[0][0][iWeek-1] + OptionScores[1][0][iWeek-1] < 0) {
+					try {
+						Random rand = new Random();
+						int upperBound = 3;
+						int random = rand.nextInt(upperBound);
+						String fileName = badchoice[random];
+						Audio player = new Audio(fileName); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				  } else if (OptionScores[0][0][iWeek-1] + OptionScores[1][0][iWeek-1] >= 2) {
+					try {
+						Audio player = new Audio("yay.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				}
 			}
-    		
+			DisplayOutcome(Outcomes[0][iWeek-1], false, null);
+		}
     	});
     	
     	Option2.addActionListener(new ActionListener() {
@@ -223,6 +272,38 @@ public class Frame {
 				iMoney += OptionScores[0][1][iWeek-1];
 				iMoral += OptionScores[1][1][iWeek-1];
 				iSocialCredit += OptionScores[2][1][iWeek-1];
+				if (OptionScores[2][1][iWeek-1] < 0) {
+					try {
+						Audio player = new Audio("siren.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				} else if (OptionScores[0][1][iWeek-1] + OptionScores[1][1][iWeek-1] < 0) {
+					try {
+						Random rand = new Random();
+						int upperBound = 3;
+						int random = rand.nextInt(upperBound);
+						String fileName = badchoice[random];
+						Audio player = new Audio(fileName); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				  } else if (OptionScores[0][1][iWeek-1] + OptionScores[1][1][iWeek-1] >= 2) {
+					try {
+						Audio player = new Audio("yay.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				}
 				DisplayOutcome(Outcomes[1][iWeek-1], false, null);
 			}
     		
@@ -235,6 +316,39 @@ public class Frame {
 				iMoney += OptionScores[0][2][iWeek-1];
 				iMoral += OptionScores[1][2][iWeek-1];
 				iSocialCredit += OptionScores[2][2][iWeek-1];
+				if (OptionScores[2][2][iWeek-1] < 0) {
+					try {
+						Audio player = new Audio("siren.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				} else if (OptionScores[0][2][iWeek-1] + OptionScores[1][2][iWeek-1] < 0) {
+					try {
+						Random rand = new Random();
+						int upperBound = 3;
+						int random = rand.nextInt(upperBound);
+						String fileName = badchoice[random];
+						Audio player = new Audio(fileName); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				} else if (OptionScores[0][2][iWeek-1] + OptionScores[1][2][iWeek-1] >= 2) {
+					try {
+						Audio player = new Audio("yay.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+			
+				}
 				DisplayOutcome(Outcomes[2][iWeek-1], false, null);
 			}
     		
@@ -247,11 +361,42 @@ public class Frame {
 				iMoney += OptionScores[0][3][iWeek-1];
 				iMoral += OptionScores[1][3][iWeek-1];
 				iSocialCredit += OptionScores[2][3][iWeek-1];
+				if (OptionScores[2][3][iWeek-1] < 0) {
+					try {
+						Audio player = new Audio("siren.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				} else if (OptionScores[0][3][iWeek-1] + OptionScores[1][3][iWeek-1] < 0) {
+					try {
+						Random rand = new Random();
+						int upperBound = 3;
+						int random = rand.nextInt(upperBound);
+						String fileName = badchoice[random];
+						Audio player = new Audio(fileName); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+			    } else if (OptionScores[0][3][iWeek-1] + OptionScores[1][3][iWeek-1] >= 2) {
+					try {
+						Audio player = new Audio("yay.wav"); 
+						player.play();
+						player.stop();
+					} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				  }
+				} 
 				DisplayOutcome(Outcomes[3][iWeek-1], false, null);
 			}
-    		
     	});
-    }
+	}
     
     public void DisplayOutcome(String sOutcome, boolean bEnding, Icon image) {
     	panel.removeAll();
@@ -268,6 +413,7 @@ public class Frame {
     		iWeek = 20;
     	JTextArea WeekLabel = new JTextArea("Week " + iWeek + " out of 20"); //create a new label that tells the user the week number
 	    WeekLabel.setFont(Font40); //set the label's font
+	    WeekLabel.setBackground(Color.yellow);
 	    WeekLabel.setLineWrap(true); //set the line wrap
 	    WeekLabel.setWrapStyleWord(true); //set the line wrap to be between words, not between letters
 	    WeekLabel.setEditable(false); //make it so the text area cannot be edited
@@ -284,6 +430,7 @@ public class Frame {
 		
 		//set the label's font and wrap as before. Set the size to take up half the screen.
 		MoneyMoral.setFont(Font40);
+		MoneyMoral.setBackground(Color.yellow);
 		MoneyMoral.setLineWrap(true);
 		MoneyMoral.setWrapStyleWord(true);
 		MoneyMoral.setEditable(false);
@@ -339,6 +486,9 @@ public class Frame {
 	    
 	    Constraints.fill = GridBagConstraints.HORIZONTAL;
 	    Next.setFont(Font40);
+	    Next.setBackground(Color.YELLOW);
+	    Next.setOpaque(true);
+		Next.setBorderPainted(false);
 	    Next.invalidate();
 	    panel.add(Next, Constraints);
 	    panel.revalidate();
@@ -391,4 +541,5 @@ public class Frame {
         }
       } 
    }
-}
+ }
+
