@@ -159,8 +159,10 @@ public class Frame {
 		Situation.setPreferredSize(null);
 		Situation.invalidate(); //mark the text area as not updated
 	    panel.add(Situation, Constraints); //add it to the panel
-	    
-	    Constraints.gridy=2;
+	  
+
+    //set the constraints for the button to place it, set the size, set the font, and set the color
+	  Constraints.gridy=2;
 		Constraints.gridwidth=1;
 		Constraints.ipady=0;
 		Constraints.weightx = 0.1;
@@ -173,10 +175,12 @@ public class Frame {
 		Option1.setPreferredSize(dimHalfs);
 		Option1.setMinimumSize(dimHalfs);
 		Option1.setMaximumSize(dimHalfs);
+    //mark the button as not up to date and add it to the panel
 		Option1.invalidate();
 	    panel.add(Option1, Constraints);
-	    
-	    Constraints.gridx=1;
+
+    //use the same process to add the second button 
+	  Constraints.gridx=1;
 		Option2 = new JButton("<html>" + Options[1][iWeek - 1]);
 		Option2.setFont(Font40);
 		Option2.setBackground(Color.YELLOW);
@@ -188,7 +192,7 @@ public class Frame {
 		Option2.invalidate();
 	    panel.add(Option2, Constraints);
 	    
-	    if (!Options[2][iWeek-1].equals("N/A")) {
+	    if (!Options[2][iWeek-1].equals("N/A")) { //if there is a third and fourth option, add the third and fourth button as with the first and second
 		    Constraints.gridx=0;
 		    Constraints.gridy=3;
 			Option3 = new JButton("<html>" + Options[2][iWeek - 1]);
@@ -214,8 +218,9 @@ public class Frame {
 			Option4.invalidate();
 		    panel.add(Option4, Constraints);
 	    }
-	    
-	    panel.revalidate();
+	  
+    //update the panel and run the ButtonClicks method
+	  panel.revalidate();
 		panel.repaint();
 		ButtonClicks();
 	}
@@ -239,7 +244,7 @@ public class Frame {
 					System.out.println("Error with playing sound.");
 					ex.printStackTrace();
 				  }
-				} else if (OptionScores[0][0][iWeek-1] + OptionScores[1][0][iWeek-1] < 0) {
+				} else if (OptionScores[0][0][iWeek-1] + OptionScores[1][0][iWeek-1] < -1) {
 					try {
 						Random rand = new Random();
 						int upperBound = 3;
@@ -283,7 +288,7 @@ public class Frame {
 					System.out.println("Error with playing sound.");
 					ex.printStackTrace();
 				  }
-				} else if (OptionScores[0][1][iWeek-1] + OptionScores[1][1][iWeek-1] < 0) {
+				} else if (OptionScores[0][1][iWeek-1] + OptionScores[1][1][iWeek-1] < -1) {
 					try {
 						Random rand = new Random();
 						int upperBound = 3;
@@ -328,7 +333,7 @@ public class Frame {
 					System.out.println("Error with playing sound.");
 					ex.printStackTrace();
 				  }
-				} else if (OptionScores[0][2][iWeek-1] + OptionScores[1][2][iWeek-1] < 0) {
+				} else if (OptionScores[0][2][iWeek-1] + OptionScores[1][2][iWeek-1] < -1) {
 					try {
 						Random rand = new Random();
 						int upperBound = 3;
@@ -374,7 +379,7 @@ public class Frame {
 					System.out.println("Error with playing sound.");
 					ex.printStackTrace();
 				  }
-				} else if (OptionScores[0][3][iWeek-1] + OptionScores[1][3][iWeek-1] < 0) {
+				} else if (OptionScores[0][3][iWeek-1] + OptionScores[1][3][iWeek-1] < -1) {
 					try {
 						Random rand = new Random();
 						int upperBound = 3;
@@ -445,6 +450,7 @@ public class Frame {
 		MoneyMoral.invalidate(); //mark the label as not up to date and add it to the panel
 	    panel.add(MoneyMoral, Constraints);
 	    
+      //create a new label with the situation text and set its properties as before
 	    JTextArea SituationLabel = new JTextArea(sOutcome);
 	    SituationLabel.setFont(Font40);
 	    SituationLabel.setLineWrap(true);
@@ -452,16 +458,19 @@ public class Frame {
 	    SituationLabel.setEditable(false);
 	    SituationLabel.setPreferredSize(null);
 	    SituationLabel.invalidate();
-	    if (bEnding) {
+	    if (bEnding) { //if the game has reached the end...
+        //create a JPanel for the image and text together and set it's constraints
 	    	JPanel imageAndText = new JPanel(new GridBagLayout());
 	    	Constraints.gridy = 0;
-	    	imageAndText.add(SituationLabel, Constraints);
+	    	imageAndText.add(SituationLabel, Constraints); //add the label from above to the new panel
+        //reset the constraints to accomodate the image
 	    	Constraints.gridy = 1;
 	    	Constraints.weighty = 0.5;
 	    	Constraints.fill = GridBagConstraints.HORIZONTAL;
-	    	JLabel imageLabel = new JLabel(image);
-	    	imageLabel.setSize(1000, 100);
-	    	imageAndText.add(imageLabel, Constraints);
+	    	JLabel imageLabel = new JLabel(image); //create a new JLabel object with the appropriate image based on the ending
+	    	imageLabel.setSize(1000, 100); //set the image size
+	    	imageAndText.add(imageLabel, Constraints); //add the image to the panel
+        //reset the constraints for the imageAndText panel
 	    	Constraints.fill = GridBagConstraints.BOTH;
 	    	Constraints.gridx=0;
 		    Constraints.gridy = 1;
@@ -469,8 +478,9 @@ public class Frame {
 		    Constraints.ipady = 150;
 		    Constraints.weightx = 0.5;
 		    Constraints.weighty = 0.5;
-	    	panel.add(imageAndText, Constraints);
-	    } else {
+	    	panel.add(imageAndText, Constraints); //add the imageAndText panel to the main panel
+	    } else { //if the game has not reached the end...
+        //reset the constraints and add the situation label to the panel
 	    	Constraints.fill = GridBagConstraints.BOTH;
 	    	Constraints.gridx=0;
 		    Constraints.gridy = 1;
@@ -480,33 +490,35 @@ public class Frame {
 		    Constraints.weighty = 0.5;
 	    	panel.add(SituationLabel, Constraints);
 	    }
+      //set the constraints for the next button
 	    Constraints.gridy = 3;
 	    Constraints.ipady = 200;
 	    Constraints.weighty = 0;
-	    if (bEnding) {
+	    if (bEnding) { //if it is the end, change the next button's text to say "Game Over"
 	    	Next = new JButton("Game Over");
 	    	Constraints.ipady = 0;
 	    }
-	    
+	    //set the other constraints including the font, color, opacity, and borders
 	    Constraints.fill = GridBagConstraints.HORIZONTAL;
 	    Next.setFont(Font40);
 	    Next.setBackground(Color.YELLOW);
 	    Next.setOpaque(true);
 		Next.setBorderPainted(false);
+    //add the Next button to the panel, mark it as not up to date, update and the panel
 	    Next.invalidate();
 	    panel.add(Next, Constraints);
 	    panel.revalidate();
 	    panel.repaint();
-	    if (bEnding) {
+	    if (bEnding) { //if it is the end, deactivate the frame so that clicking does not do anything else
 	    	frame.setEnabled(false);
 	    }
-    	iWeek++;
+    	iWeek++; //increment the week number
 	    Next.addActionListener(new ActionListener(){ //Add an action listener to the button that waits for it to be clicked
     		@Override
     		public void actionPerformed(ActionEvent e) { //When the button is clicked . . .
-    			if (iWeek<21) {
+    			if (iWeek<21) { //if the game is still going, run the DiplayQuestion method
     				DisplayQuestion();
-    			} else {
+    			} else { //if the game is over, try to run the outcomes method
     				try {
 						Outcomes();
 					} catch (IOException e1) {
