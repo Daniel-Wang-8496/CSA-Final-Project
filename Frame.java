@@ -229,6 +229,7 @@ public class Frame {
 				iMoney += OptionScores[0][0][iWeek-1];
 				iMoral += OptionScores[1][0][iWeek-1];
 				iSocialCredit += OptionScores[2][0][iWeek-1];
+        // if else statement determining whether to play a siren noise if social credit is decreased, a bad sound if the player chooses something and money and moral get deducted, or a good sound if the player chooses something good
 				if (OptionScores[2][0][iWeek-1] < 0) {
 					try {
 						Audio player = new Audio("siren.wav"); 
@@ -272,6 +273,7 @@ public class Frame {
 				iMoney += OptionScores[0][1][iWeek-1];
 				iMoral += OptionScores[1][1][iWeek-1];
 				iSocialCredit += OptionScores[2][1][iWeek-1];
+        // if else statement determining whether to play a siren noise if social credit is decreased, a bad sound if the player chooses something and money and moral get deducted, or a good sound if the player chooses something good
 				if (OptionScores[2][1][iWeek-1] < 0) {
 					try {
 						Audio player = new Audio("siren.wav"); 
@@ -316,6 +318,7 @@ public class Frame {
 				iMoney += OptionScores[0][2][iWeek-1];
 				iMoral += OptionScores[1][2][iWeek-1];
 				iSocialCredit += OptionScores[2][2][iWeek-1];
+        // if else statement determining whether to play a siren noise if social credit is decreased, a bad sound if the player chooses something and money and moral get deducted, or a good sound if the player chooses something good
 				if (OptionScores[2][2][iWeek-1] < 0) {
 					try {
 						Audio player = new Audio("siren.wav"); 
@@ -361,6 +364,7 @@ public class Frame {
 				iMoney += OptionScores[0][3][iWeek-1];
 				iMoral += OptionScores[1][3][iWeek-1];
 				iSocialCredit += OptionScores[2][3][iWeek-1];
+        // if else statement determining whether to play a siren noise if social credit is decreased, a bad sound if the player chooses something and money and moral get deducted, or a good sound if the player chooses something good
 				if (OptionScores[2][3][iWeek-1] < 0) {
 					try {
 						Audio player = new Audio("siren.wav"); 

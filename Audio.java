@@ -8,7 +8,6 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
   
 public class Audio {
-  Long currentFrame;
   Clip clip; 
 
   AudioInputStream audioInput;
@@ -33,6 +32,7 @@ public class Audio {
     }
 
     public void play() throws InterruptedException{
+      // play clip for 2 seconds
       clip.start();
       Thread.sleep(2000);
     }
@@ -40,7 +40,7 @@ public class Audio {
     public void stop() throws UnsupportedAudioFileException,
     IOException, LineUnavailableException 
     {
-        currentFrame = 0L;
+        // stop clip
         clip.stop();
         clip.close();
     }
